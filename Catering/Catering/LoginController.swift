@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import FacebookLogin
+import FacebookCore
 
 class LoginController:ParentViewController  {
     
@@ -16,17 +18,41 @@ class LoginController:ParentViewController  {
         
         self.showNavigationTitle(title: "Login");
         
-        let button = CustomButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100));
-        button.setTitle("Login", for: UIControlState.normal);
-        button.setTitleColor(UIColor.black, for: UIControlState.normal);
-        button.center = CGPoint(x: self.view.bounds.size.width/2, y: self.view.bounds.size.height/2);
-        button.buttonActionBlock = { () -> Void in
-            let mainViewCtrl = MainViewController();
-            self.navigationController?.pushViewController(mainViewCtrl, animated: true);
-        }
+        let myLoginButton = UIButton(type: .custom);
+        myLoginButton.backgroundColor = UIColor.darkGray;
+        myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40);
+        myLoginButton.center = view.center;
+        myLoginButton.setTitle("Login Facebook", for: UIControlState.normal);
+        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside);
         
-        self.view.addSubview(button);
+        // Add the button to the view
+        view.addSubview(myLoginButton)
+        
+        /*let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.center = view.center;
+        
+        
+        
+        view.addSubview(loginButton)*/
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc func loginButtonClicked() {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { (loginResult) in
+            print(loginResult);
+    
+            let connection = GraphRequestConnection()
+            connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
+                switch result {
+                case .success(let response):
+                    print("Graph Request Succeeded: \(response)")
+                case .failed(let error):
+                    print("Graph Request Failed: \(error)")
+                }
+            }
+            connection.start()
+        }
     }
     
     override func didReceiveMemoryWarning() {

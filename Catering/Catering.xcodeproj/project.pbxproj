@@ -15,9 +15,11 @@
 		3F5A06F820299EB700C48C34 /* ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A06F720299EB700C48C34 /* ParentController.swift */; };
 		3F5A07032029C0E200C48C34 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A07022029C0E200C48C34 /* LoginController.swift */; };
 		3F5A07052029C11100C48C34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A07042029C11100C48C34 /* MainViewController.swift */; };
+		EADEA0C7EED031A3C61A4553 /* Pods_Catering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E79CE6415C77D77F75387C1 /* Pods_Catering.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E79CE6415C77D77F75387C1 /* Pods_Catering.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catering.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5A06D820298B6B00C48C34 /* Catering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5A06DB20298B6B00C48C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F5A06E220298B6B00C48C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		3F5A06F720299EB700C48C34 /* ParentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentController.swift; sourceTree = "<group>"; };
 		3F5A07022029C0E200C48C34 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3F5A07042029C11100C48C34 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9D71FF682A3AAB02440AD825 /* Pods-Catering.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catering.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Catering/Pods-Catering.debug.xcconfig"; sourceTree = "<group>"; };
+		F74295BA05C8C07619CA57C8 /* Pods-Catering.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catering.release.xcconfig"; path = "Pods/Target Support Files/Pods-Catering/Pods-Catering.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADEA0C7EED031A3C61A4553 /* Pods_Catering.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0984284CE21FC2A20AF79232 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E79CE6415C77D77F75387C1 /* Pods_Catering.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F5A06CF20298B6B00C48C34 = {
 			isa = PBXGroup;
 			children = (
 				3F5A06DA20298B6B00C48C34 /* Catering */,
 				3F5A06D920298B6B00C48C34 /* Products */,
+				F5B4A907D3980046CA84AFF7 /* Pods */,
+				0984284CE21FC2A20AF79232 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +96,15 @@
 			path = CustomUIComponents;
 			sourceTree = "<group>";
 		};
+		F5B4A907D3980046CA84AFF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D71FF682A3AAB02440AD825 /* Pods-Catering.debug.xcconfig */,
+				F74295BA05C8C07619CA57C8 /* Pods-Catering.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F5A06EA20298B6B00C48C34 /* Build configuration list for PBXNativeTarget "Catering" */;
 			buildPhases = (
+				7A85CC690C10B5BF7EAECF24 /* [CP] Check Pods Manifest.lock */,
 				3F5A06D420298B6B00C48C34 /* Sources */,
 				3F5A06D520298B6B00C48C34 /* Frameworks */,
 				3F5A06D620298B6B00C48C34 /* Resources */,
+				6CE7CD9F82F94E96A13825E0 /* [CP] Embed Pods Frameworks */,
+				DF7BD8A0D013EE7A92DE34F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,72 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CE7CD9F82F94E96A13825E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Catering/Pods-Catering-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Catering/Pods-Catering-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A85CC690C10B5BF7EAECF24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Catering-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF7BD8A0D013EE7A92DE34F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Catering/Pods-Catering-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F5A06D420298B6B00C48C34 /* Sources */ = {
@@ -284,6 +377,7 @@
 		};
 		3F5A06EB20298B6B00C48C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D71FF682A3AAB02440AD825 /* Pods-Catering.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +393,7 @@
 		};
 		3F5A06EC20298B6B00C48C34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F74295BA05C8C07619CA57C8 /* Pods-Catering.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
