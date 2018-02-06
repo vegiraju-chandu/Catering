@@ -19,7 +19,6 @@ class LoginController:ParentViewController  {
         // Do any additional setup after loading the view, typically from a nib.
         
         super.viewDidLoad();
-        
         self.showNavigationTitle(title: "Login");
         
         if let accessToken = AccessToken.current {
