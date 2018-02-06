@@ -22,17 +22,20 @@ class LoginController:ParentViewController  {
         self.showNavigationTitle(title: "Login");
         
         if let accessToken = AccessToken.current {
-            print("Access token is \(accessToken)")
+            print("Access token is \(accessToken)");
+            self.navigationController?.pushViewController(MainViewController(), animated: true);
         }else{
             // User is logged in, use 'accessToken' here.
-            let myLoginButton = UIButton(type: .custom);
+            /*let myLoginButton = UIButton(type: .custom);
             myLoginButton.backgroundColor = UIColor.darkGray;
             myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40);
             myLoginButton.center = view.center;
             myLoginButton.setTitle("Login Facebook", for: UIControlState.normal);
             myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside);
             // Add the button to the view
-            view.addSubview(myLoginButton)
+            view.addSubview(myLoginButton)*/
+            
+            self.navigationController?.pushViewController(MainViewController(), animated: true);
         }
         
     }
@@ -46,7 +49,8 @@ class LoginController:ParentViewController  {
             connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
                 switch result {
                 case .success(let response):
-                    print("Graph Request Succeeded: \(response)")
+                    print("Graph Request Succeeded: \(response)");
+                    self.navigationController?.pushViewController(MainViewController(), animated: true);
                 case .failed(let error):
                     print("Graph Request Failed: \(error)")
                 }
