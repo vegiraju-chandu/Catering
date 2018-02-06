@@ -18,22 +18,21 @@ class LoginController:ParentViewController  {
         
         self.showNavigationTitle(title: "Login");
         
-        let myLoginButton = UIButton(type: .custom);
-        myLoginButton.backgroundColor = UIColor.darkGray;
-        myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40);
-        myLoginButton.center = view.center;
-        myLoginButton.setTitle("Login Facebook", for: UIControlState.normal);
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside);
+        if let accessToken = AccessToken.current {
+            print("Access token is \(accessToken)")
+        }else{
+            // User is logged in, use 'accessToken' here.
+            let myLoginButton = UIButton(type: .custom);
+            myLoginButton.backgroundColor = UIColor.darkGray;
+            myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40);
+            myLoginButton.center = view.center;
+            myLoginButton.setTitle("Login Facebook", for: UIControlState.normal);
+            myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside);
+            
+            // Add the button to the view
+            view.addSubview(myLoginButton)
+        }
         
-        // Add the button to the view
-        view.addSubview(myLoginButton)
-        
-        /*let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center;
-        
-        
-        
-        view.addSubview(loginButton)*/
         // Do any additional setup after loading the view, typically from a nib.
     }
     
