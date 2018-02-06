@@ -13,7 +13,11 @@ import FacebookCore
 
 class LoginController:ParentViewController  {
     
+    
     override func viewDidLoad() {
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        
         super.viewDidLoad();
         
         self.showNavigationTitle(title: "Login");
@@ -28,12 +32,10 @@ class LoginController:ParentViewController  {
             myLoginButton.center = view.center;
             myLoginButton.setTitle("Login Facebook", for: UIControlState.normal);
             myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside);
-            
             // Add the button to the view
             view.addSubview(myLoginButton)
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     @objc func loginButtonClicked() {

@@ -19,7 +19,7 @@ class ParentViewController: UIViewController {
     override func loadView() {
         super.loadView();
         
-        //This is to 
+        //This is to hide navigationbar
         self.navigationController?.setNavigationBarHidden(true, animated: true);
         
         navigationView = UIView(frame: CGRect(x: 0, y: 20, width: self.view.bounds.size.width, height: 44));
